@@ -184,4 +184,5 @@ zle -N bracketed-paste bracketed-paste-magic
 # Put exports in ~/.zshrc.secrets and keep it chmod 600 + gitignored
 [[ -f "$HOME/.zshrc.secrets" ]] && source "$HOME/.zshrc.secrets"
 
-. "$HOME/.langflow/uv/env"
+# Langflow uv environment
+[ -f "$HOME/.langflow/uv/env" ] && . "$HOME/.langflow/uv/env"
