@@ -142,6 +142,8 @@ alias newbranch='git checkout -b'
 alias gs="git status"
 alias gc="git commit -m"
 alias gco="git checkout"
+# Markdown viewer (bat with syntax highlighting)
+command -v bat &>/dev/null && alias md='bat'
 
 ########## yazi helper (cd back to chosen dir) ##########
 y() {
