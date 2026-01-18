@@ -193,3 +193,5 @@ zle -N bracketed-paste bracketed-paste-magic
 
 # Langflow uv environment
 [ -f "$HOME/.langflow/uv/env" ] && . "$HOME/.langflow/uv/env"
+
+: # ensure zero exit status
