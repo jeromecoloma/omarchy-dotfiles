@@ -130,7 +130,11 @@ fi
 
 
 ########## Aliases ##########
-alias la='ls -la'
+# eza aliases for colored directory listings with icons
+alias ls='eza -lh --group-directories-first --icons=auto'
+alias la='ls -a'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias lta='lt -a'
 alias tma='tmux attach -t $1'
 alias tmk='tmux kill-session -t $1'
 alias tml='tmux ls'
