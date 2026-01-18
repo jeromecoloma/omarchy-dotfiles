@@ -149,10 +149,64 @@ alias lta='lt -a'
 alias tma='tmux attach -t $1'
 alias tmk='tmux kill-session -t $1'
 alias tml='tmux ls'
-alias newbranch='git checkout -b'
+# Git aliases (modern style)
 alias gs="git status"
-alias gc="git commit -m"
-alias gco="git checkout"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit -v"              # -v shows diff in editor
+alias gcm="git commit -m"
+alias gca="git commit -v --amend"
+alias gcan="git commit --amend --no-edit"  # amend without editing message
+alias gsw="git switch"                # modern branch switching
+alias gswc="git switch -c"            # create and switch to new branch
+alias gre="git restore"               # restore working tree files
+alias gres="git restore --staged"     # unstage files
+alias gb="git branch"
+alias gba="git branch -a"
+alias gbd="git branch -d"
+alias gbD="git branch -D"
+alias gd="git diff"
+alias gds="git diff --staged"         # clearer than --cached
+alias gl="git log --oneline -20"
+alias gla="git log --oneline --all --graph -20"
+alias glf="git log --pretty=format:'%C(yellow)%h%Creset %s %C(dim)%cr %C(blue)<%an>%Creset' -20"
+alias gm="git merge"
+alias gpl="git pull --rebase"         # rebase by default, avoids merge commits
+alias gplm="git pull"                 # merge-based pull when needed
+alias gps="git push"
+alias gpsu="git push -u origin HEAD"  # push new branch and set upstream
+alias gpsf="git push --force-with-lease"
+alias gf="git fetch"
+alias gfa="git fetch --all --prune"
+alias grb="git rebase"
+alias grbi="git rebase -i"
+alias grbc="git rebase --continue"
+alias grba="git rebase --abort"
+alias gsh="git show"
+alias gcp="git cherry-pick"
+
+# Git workflow functions
+gundo() {
+  # Undo last commit, keeping changes staged
+  git reset --soft HEAD~1
+}
+
+gsync() {
+  # Sync current branch with main/master
+  local main_branch=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
+  [[ -z "$main_branch" ]] && main_branch="main"
+  git fetch origin "$main_branch" && git rebase "origin/$main_branch"
+}
+
+gwip() {
+  # Quick save work-in-progress
+  git add -A && git commit -m "WIP: $(date '+%Y-%m-%d %H:%M')"
+}
+
+gunwip() {
+  # Undo WIP commit if last commit was a WIP
+  [[ "$(git log -1 --format=%s)" == WIP:* ]] && git reset --soft HEAD~1
+}
 # Markdown viewer (bat with syntax highlighting)
 command -v bat &>/dev/null && alias md='bat'
 

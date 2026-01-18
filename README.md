@@ -90,8 +90,35 @@ These enhance both configs but aren't strictly required:
 - `ls` / `la` / `lt` - eza with icons and tree view
 - `md` - bat for markdown/file viewing
 - `y` - yazi file manager (returns to selected directory)
-- `gs` / `gc` / `gco` - git shortcuts
 - `tma` / `tmk` / `tml` - tmux session management
+
+**Git Aliases (modern style using `switch`/`restore`):**
+
+| Alias | Command | Description |
+|-------|---------|-------------|
+| `gs` | `git status` | Show status |
+| `ga` / `gaa` | `git add` / `git add --all` | Stage files |
+| `gc` | `git commit -v` | Commit (shows diff in editor) |
+| `gcm` | `git commit -m` | Commit with message |
+| `gca` | `git commit -v --amend` | Amend commit |
+| `gsw` | `git switch` | Switch branches |
+| `gswc` | `git switch -c` | Create and switch to branch |
+| `gre` | `git restore` | Restore working tree files |
+| `gres` | `git restore --staged` | Unstage files |
+| `gd` / `gds` | `git diff` / `--staged` | Show diffs |
+| `gl` / `gla` | `git log --oneline` | Log (20 entries) |
+| `gpl` | `git pull --rebase` | Pull with rebase |
+| `gps` / `gpsu` | `git push` / `-u origin HEAD` | Push / push new branch |
+| `gf` / `gfa` | `git fetch` / `--all --prune` | Fetch |
+
+**Git Workflow Functions:**
+
+| Function | Description |
+|----------|-------------|
+| `gundo` | Undo last commit, keep changes staged |
+| `gsync` | Fetch and rebase on main/master |
+| `gwip` | Quick WIP commit with timestamp |
+| `gunwip` | Undo last commit if it was a WIP |
 
 ### Tmux
 
