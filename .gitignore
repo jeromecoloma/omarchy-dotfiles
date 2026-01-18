@@ -27,8 +27,9 @@ build/
 # --- Local Development & AI Configs --- #
 # These are symlinked from a separate, private repository
 # and should not be part of the main project history.
-/Claude.md
-/Gemini.md
+/CLAUDE.md
+/GEMINI.md
+/AGENTS.md
 /.development
 /.gemini
 /.claude
