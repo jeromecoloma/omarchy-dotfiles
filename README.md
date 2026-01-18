@@ -122,3 +122,7 @@ If NVM is installed, the config auto-switches Node versions when entering direct
 
 ### Theme
 Modify the Oh My Posh theme at `~/.config/omp/star.omp.json`.
+
+## Related
+
+- [omarchy-setup](https://github.com/jeromecoloma/omarchy-setup) - Companion repository with setup scripts and additional configuration
