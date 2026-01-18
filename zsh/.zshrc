@@ -15,8 +15,19 @@ export PATH
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export HISTTIMEFORMAT='%F %T '
 export EDITOR='nvim'
+
+# Zsh history settings
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+setopt EXTENDED_HISTORY          # Write timestamp to history
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicates first when trimming
+setopt HIST_IGNORE_DUPS          # Don't record duplicate of previous command
+setopt HIST_IGNORE_SPACE         # Don't record commands starting with space
+setopt HIST_VERIFY               # Show command before executing from history
+setopt INC_APPEND_HISTORY        # Write to history immediately
+setopt SHARE_HISTORY             # Share history between all sessions
 
 ########## Oh My Posh ##########
 eval "$(oh-my-posh init zsh --config ~/.config/omp/star.omp.json)"
