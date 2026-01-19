@@ -149,6 +149,11 @@ alias lta='lt -a'
 alias tma='tmux attach -t $1'
 alias tmk='tmux kill-session -t $1'
 alias tml='tmux ls'
+
+# Mac to omarchy/wayland
+alias pbcopy='wl-copy'
+alias pbpaste='wl-paste'
+
 # Git aliases (modern style)
 alias gs="git status"
 alias ga="git add"
