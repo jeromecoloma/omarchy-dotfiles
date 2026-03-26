@@ -133,6 +133,9 @@ if command -v nvm &>/dev/null; then
   load-nvmrc
 fi
 
+# Mise
+eval "$(mise activate zsh)"
+
 ########## Extra completions ##########
 # Laravel Artisan (if it uses compdef)
 [ -f "$HOME/bin/completion.d/artisan" ] && . "$HOME/bin/completion.d/artisan"
@@ -149,6 +152,7 @@ alias lta='lt -a'
 alias tma='tmux attach -t $1'
 alias tmk='tmux kill-session -t $1'
 alias tml='tmux ls'
+alias tmxjerome='source $HOME/bin/tmxrsessionconf jerome'
 
 # Mac to omarchy/wayland
 alias pbcopy='wl-copy'
